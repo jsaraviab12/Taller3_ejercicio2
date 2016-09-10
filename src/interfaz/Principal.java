@@ -63,38 +63,73 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
         txtNumerador.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        txtNumerador.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumeradorKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtNumerador, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 60, -1));
 
         txtDenominador.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        txtDenominador.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDenominadorKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtDenominador, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 60, -1));
 
         txtEntero.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        txtEntero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEnteroKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtEntero, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 30, 40));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 80, 10));
 
         txtDenominador1.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        txtDenominador1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDenominador1KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtDenominador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 60, -1));
 
         txtEntero1.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        txtEntero1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEntero1KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtEntero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 30, 40));
 
         txtNumerador1.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        txtNumerador1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumerador1KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtNumerador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 60, -1));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 80, 10));
 
+        txtDenominador2.setEditable(false);
         txtDenominador2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         jPanel1.add(txtDenominador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 60, -1));
 
+        txtEntero2.setEditable(false);
         txtEntero2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         jPanel1.add(txtEntero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 30, 40));
 
+        txtNumerador2.setEditable(false);
         txtNumerador2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         jPanel1.add(txtNumerador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 60, -1));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 80, 10));
 
+        txtDenominador3.setEditable(false);
         txtDenominador3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         jPanel1.add(txtDenominador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 60, -1));
 
+        txtNumerador3.setEditable(false);
         txtNumerador3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         jPanel1.add(txtNumerador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 90, 60, -1));
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 80, 10));
@@ -203,13 +238,14 @@ public class Principal extends javax.swing.JFrame {
      txtNumerador2.setText(""+m3.getNumerador());
      txtDenominador2.setText(""+m3.getDenominador());
      txtEntero2.setText(""+m3.getEntero());
+     cmdConvertir.setEnabled(true);
      }catch(DenominadorCeroException e){
          JOptionPane.showMessageDialog(null, e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
       }
      }
      
      
-     cmdConvertir.setEnabled(true);
+     
     
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
@@ -247,6 +283,72 @@ public class Principal extends javax.swing.JFrame {
          txtNumerador.requestFocusInWindow();
         cmdConvertir.setEnabled(false);
     }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtEnteroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEnteroKeyTyped
+        char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtEnteroKeyTyped
+
+    private void txtNumeradorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeradorKeyTyped
+       char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtNumeradorKeyTyped
+
+    private void txtDenominadorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDenominadorKeyTyped
+        char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtDenominadorKeyTyped
+
+    private void txtNumerador1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumerador1KeyTyped
+        char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtNumerador1KeyTyped
+
+    private void txtDenominador1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDenominador1KeyTyped
+       char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtDenominador1KeyTyped
+
+    private void txtEntero1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEntero1KeyTyped
+        char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtEntero1KeyTyped
 
     /**
      * @param args the command line arguments
