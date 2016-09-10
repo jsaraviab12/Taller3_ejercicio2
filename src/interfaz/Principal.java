@@ -109,6 +109,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmdConvertir.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdConvertir.setText("Convertir a Fraccion");
+        cmdConvertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdConvertirActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdConvertir, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, -1, -1));
 
         cmdCalcular.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
@@ -123,6 +128,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmdBorrar.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 240, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,22 +155,22 @@ public class Principal extends javax.swing.JFrame {
      Mixtos m1 , m2 ,m3 = null;
      
      if (txtNumerador.getText().trim().isEmpty()){
-         JOptionPane.showMessageDialog(this,"Digite el Numerador","Error",JOptionPane.ERROR_MESSAGE);
+         JOptionPane.showMessageDialog(this,"Digite el Numerador n°1","Error",JOptionPane.ERROR_MESSAGE);
          txtNumerador.requestFocusInWindow();
      }else if(txtDenominador.getText().trim().isEmpty()){
-         JOptionPane.showMessageDialog(this,"Ingrese el denominador","Error",JOptionPane.ERROR_MESSAGE);
+         JOptionPane.showMessageDialog(this,"Digite el Denominador n°1" ,"Error",JOptionPane.ERROR_MESSAGE);
          txtDenominador.requestFocusInWindow();
      }else if(txtEntero.getText().trim().isEmpty()){
-         JOptionPane.showMessageDialog(this, "Digite la parte entera","Error",JOptionPane.ERROR_MESSAGE);
+         JOptionPane.showMessageDialog(this, "Digite el Entero n°1","Error",JOptionPane.ERROR_MESSAGE);
          txtEntero.requestFocusInWindow();
      }else if(txtNumerador1.getText().trim().isEmpty()){
-         JOptionPane.showMessageDialog(this,"Digite el Numerador","Error",JOptionPane.ERROR_MESSAGE);
+         JOptionPane.showMessageDialog(this,"Digite el Numerador n°2","Error",JOptionPane.ERROR_MESSAGE);
          txtNumerador1.requestFocusInWindow();
      }else if(txtDenominador1.getText().trim().isEmpty()){
-         JOptionPane.showMessageDialog(this,"Ingrese el denominador","Error",JOptionPane.ERROR_MESSAGE);
+         JOptionPane.showMessageDialog(this,"Digite el Denominador n°2","Error",JOptionPane.ERROR_MESSAGE);
          txtDenominador1.requestFocusInWindow();
      }else if(txtEntero1.getText().trim().isEmpty()){
-         JOptionPane.showMessageDialog(this, "Digite la parte entera","Error",JOptionPane.ERROR_MESSAGE);
+         JOptionPane.showMessageDialog(this, "Digite el Entero n°2","Error",JOptionPane.ERROR_MESSAGE);
          txtEntero1.requestFocusInWindow();
      }else{
      
@@ -202,6 +212,41 @@ public class Principal extends javax.swing.JFrame {
      cmdConvertir.setEnabled(true);
     
     }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdConvertirActionPerformed
+        int entero,numerador , denominador  , convertirn , convertird ;
+         
+         numerador = Integer.parseInt(txtNumerador2.getText());
+         denominador = Integer.parseInt(txtDenominador2.getText());
+         entero = Integer.parseInt(txtEntero2.getText());
+          
+         convertirn = entero * denominador + numerador;
+         convertird = denominador;
+          
+         txtNumerador.setText(""+convertirn);
+         txtDenominador.setText(""+convertird);
+         
+       
+         cmdConvertir.setEnabled(false);
+         
+         txtEntero1.requestFocusInWindow();
+    }//GEN-LAST:event_cmdConvertirActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        txtNumerador.setText("");
+        txtNumerador1.setText("");
+        txtNumerador2.setText("");
+        txtNumerador3.setText("");
+        txtDenominador.setText("");
+        txtDenominador1.setText("");
+        txtDenominador2.setText("");
+        txtDenominador3.setText("");
+        txtEntero.setText("");
+        txtEntero1.setText("");
+        txtEntero2.setText("");
+         txtNumerador.requestFocusInWindow();
+        cmdConvertir.setEnabled(false);
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
