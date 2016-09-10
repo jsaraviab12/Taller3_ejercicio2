@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package interfaz;
+import clases.DenominadorCeroException;
+import clases.Mixtos;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,6 +19,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        cmdConvertir.setEnabled(false);
     }
 
     /**
@@ -27,21 +31,177 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtNumerador = new javax.swing.JTextField();
+        txtDenominador = new javax.swing.JTextField();
+        txtEntero = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        txtDenominador1 = new javax.swing.JTextField();
+        txtEntero1 = new javax.swing.JTextField();
+        txtNumerador1 = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        txtDenominador2 = new javax.swing.JTextField();
+        txtEntero2 = new javax.swing.JTextField();
+        txtNumerador2 = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        txtDenominador3 = new javax.swing.JTextField();
+        txtNumerador3 = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        cmbOperaciones = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        cmdConvertir = new javax.swing.JButton();
+        cmdCalcular = new javax.swing.JButton();
+        cmdBorrar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 24)); // NOI18N
+        jLabel1.setText("Operaciones con numeros mixtos");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+
+        txtNumerador.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtNumerador, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 60, -1));
+
+        txtDenominador.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtDenominador, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 60, -1));
+
+        txtEntero.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtEntero, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 30, 40));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 80, 10));
+
+        txtDenominador1.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtDenominador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 60, -1));
+
+        txtEntero1.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtEntero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 30, 40));
+
+        txtNumerador1.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtNumerador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 60, -1));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 80, 10));
+
+        txtDenominador2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtDenominador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 60, -1));
+
+        txtEntero2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtEntero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 30, 40));
+
+        txtNumerador2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtNumerador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 60, -1));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 80, 10));
+
+        txtDenominador3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtDenominador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 60, -1));
+
+        txtNumerador3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtNumerador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 90, 60, -1));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 80, 10));
+
+        cmbOperaciones.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
+        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-", "x", "/" }));
+        jPanel1.add(cmbOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 50, 40));
+
+        jLabel2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
+        jLabel2.setText("=");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
+
+        cmdConvertir.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        cmdConvertir.setText("Convertir a Fraccion");
+        jPanel1.add(cmdConvertir, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, -1, -1));
+
+        cmdCalcular.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
+        cmdCalcular.setForeground(new java.awt.Color(0, 153, 0));
+        cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, -1, -1));
+
+        cmdBorrar.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        cmdBorrar.setText("Borrar");
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 240, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 844, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(860, 314));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        int op , n1 , n2, d1 , d2,ent1,ent2;
+     Mixtos m1 , m2 ,m3 = null;
+     
+     if (txtNumerador.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Digite el Numerador","Error",JOptionPane.ERROR_MESSAGE);
+         txtNumerador.requestFocusInWindow();
+     }else if(txtDenominador.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Ingrese el denominador","Error",JOptionPane.ERROR_MESSAGE);
+         txtDenominador.requestFocusInWindow();
+     }else if(txtEntero.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this, "Digite la parte entera","Error",JOptionPane.ERROR_MESSAGE);
+         txtEntero.requestFocusInWindow();
+     }else if(txtNumerador1.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Digite el Numerador","Error",JOptionPane.ERROR_MESSAGE);
+         txtNumerador1.requestFocusInWindow();
+     }else if(txtDenominador1.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Ingrese el denominador","Error",JOptionPane.ERROR_MESSAGE);
+         txtDenominador1.requestFocusInWindow();
+     }else if(txtEntero1.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this, "Digite la parte entera","Error",JOptionPane.ERROR_MESSAGE);
+         txtEntero1.requestFocusInWindow();
+     }else{
+     
+     op = cmbOperaciones.getSelectedIndex();
+     n1=Integer.parseInt(txtNumerador.getText());
+     ent1=Integer.parseInt(txtEntero.getText());
+     d1 = Integer.parseInt(txtDenominador.getText());
+     n2=Integer.parseInt(txtNumerador1.getText());
+     ent2=Integer.parseInt(txtEntero1.getText());
+     d2 = Integer.parseInt(txtDenominador1.getText());
+     try {
+     m1 = new Mixtos(n1 , d1 , ent1);
+     m2 = new Mixtos (n2 , d2 ,ent2);
+        switch (op) {
+            case 0:
+                m3=m1.sumar(m2);
+                break;
+            case 1:
+                m3 = m1.restar(m2);
+                break;
+            case 2:
+                m3=m1.multpiplicar(m2);
+                break;
+            case 3:
+                m3 = m1.dividir(m2);
+                break;
+                
+        }
+     
+     txtNumerador2.setText(""+m3.getNumerador());
+     txtDenominador2.setText(""+m3.getDenominador());
+     txtEntero2.setText(""+m3.getEntero());
+     }catch(DenominadorCeroException e){
+         JOptionPane.showMessageDialog(null, e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+      }
+     }
+     
+     
+     cmdConvertir.setEnabled(true);
+    
+    }//GEN-LAST:event_cmdCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +239,27 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbOperaciones;
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
+    private javax.swing.JButton cmdConvertir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JTextField txtDenominador;
+    private javax.swing.JTextField txtDenominador1;
+    private javax.swing.JTextField txtDenominador2;
+    private javax.swing.JTextField txtDenominador3;
+    private javax.swing.JTextField txtEntero;
+    private javax.swing.JTextField txtEntero1;
+    private javax.swing.JTextField txtEntero2;
+    private javax.swing.JTextField txtNumerador;
+    private javax.swing.JTextField txtNumerador1;
+    private javax.swing.JTextField txtNumerador2;
+    private javax.swing.JTextField txtNumerador3;
     // End of variables declaration//GEN-END:variables
 }
