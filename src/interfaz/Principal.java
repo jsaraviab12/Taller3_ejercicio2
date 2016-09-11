@@ -259,8 +259,8 @@ public class Principal extends javax.swing.JFrame {
          convertirn = entero * denominador + numerador;
          convertird = denominador;
           
-         txtNumerador.setText(""+convertirn);
-         txtDenominador.setText(""+convertird);
+         txtNumerador3.setText(""+convertirn);
+         txtDenominador3.setText(""+convertird);
          
        
          cmdConvertir.setEnabled(false);
