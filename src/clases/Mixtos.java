@@ -49,10 +49,10 @@ this.Entero = entero;
     public Mixtos sumar(Mixtos m2)throws DenominadorCeroException{
       int numerador,denominador,entero,suma,mixto1,mixto2,denomix1,denomix2,suma2;
       Mixtos m;
-      mixto1=(this.Denominador*this.Entero)+this.Numerador;
-      denomix1=this.Denominador;
-      mixto2=(m2.Denominador*m2.Entero)+m2.Numerador;
-      denomix2=m2.Denominador;
+      mixto1=(this.getDenominador ()*this.getEntero ())+this.getNumerador ();
+      denomix1=this.getDenominador ();
+      mixto2=(m2.getDenominador ()*m2.getEntero ())+m2.getNumerador ();
+      denomix2=m2.getDenominador ();
       suma=(mixto1*denomix2)+(mixto2*denomix1);
       suma2=denomix1*denomix2;
       entero=suma/suma2;
@@ -66,10 +66,10 @@ this.Entero = entero;
         int numerador,denominador,entero,resta,mixto1,mixto2,denomix1,denomix2,resta2;
       Mixtos m;
      
-      mixto1=(this.Denominador*this.Entero)+this.Numerador;
-      denomix1=this.Denominador;
-      mixto2=(m2.Denominador*m2.Entero)+m2.Numerador;
-      denomix2=m2.Denominador;
+      mixto1=(this.getDenominador ()*this.getEntero ())+this.getNumerador ();
+      denomix1=this.getDenominador ();
+      mixto2=(m2.getDenominador ()*m2.getEntero ())+m2.getNumerador ();
+      denomix2=m2.getDenominador ();
       
          resta=(mixto1*denomix2)-(mixto2*denomix1);
          resta2=denomix1*denomix2;
@@ -85,10 +85,10 @@ this.Entero = entero;
       int numerador,denominador,entero,multi,mixto1,mixto2,denomix1,denomix2,multi2;
       Mixtos m  ;
       
-      mixto1=(this.Denominador*this.Entero)+this.Numerador;
-      denomix1=this.Denominador;
-      mixto2=(m2.Denominador*m2.Entero)+m2.Numerador;
-      denomix2 =m2.Denominador;
+      mixto1=(this.getDenominador ()*this.getEntero ())+this.getNumerador ();
+      denomix1=this.getDenominador ();
+      mixto2=(m2.getDenominador ()*m2.getEntero ())+m2.getNumerador ();
+      denomix2 =m2.getDenominador ();
       
       multi=mixto1*mixto2;
       multi2=denomix1*denomix2;
@@ -104,10 +104,10 @@ this.Entero = entero;
       int numerador,denominador,entero,divi,mixto1,mixto2,denomix1,denomix2,divi2;
       Mixtos m  ;
       
-      mixto1=(this.Denominador*this.Entero)+this.Numerador;
-      denomix1=this.Denominador;
-      mixto2=(m2.Denominador*m2.Entero)+m2.Numerador;
-      denomix2 =m2.Denominador;
+      mixto1=(this.getDenominador ()*this.getEntero ())+this.getNumerador ();
+      denomix1=this.getDenominador ();
+      mixto2=(m2.getDenominador ()*m2.getEntero ())+m2.getNumerador ();
+      denomix2 =m2.getDenominador ();
       
       divi= mixto1*denomix2;
       divi2=mixto2*denomix1;

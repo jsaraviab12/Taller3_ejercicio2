@@ -208,7 +208,6 @@ public class Principal extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "Digite el Entero n°2","Error",JOptionPane.ERROR_MESSAGE);
          txtEntero1.requestFocusInWindow();
      }else{
-     
      op = cmbOperaciones.getSelectedIndex();
      n1=Integer.parseInt(txtNumerador.getText());
      ent1=Integer.parseInt(txtEntero.getText());
@@ -234,7 +233,6 @@ public class Principal extends javax.swing.JFrame {
                 break;
                 
         }
-     
      txtNumerador2.setText(""+m3.getNumerador());
      txtDenominador2.setText(""+m3.getDenominador());
      txtEntero2.setText(""+m3.getEntero());
